@@ -5,7 +5,7 @@ const routes = [
     path: "/",
     name: "home",
     meta: { layout: "main" },
-    component: import('@/views/Home.vue')
+    component: () => import("@/views/Home.vue")
   },
   {
     path: "/login",
@@ -23,36 +23,36 @@ const routes = [
     path: "/categories",
     name: "categories",
     meta: { layout: "main" },
-    component: import("@/views/Category.vue")
+    component: () => import("@/views/Category.vue")
   },
   {
     path: "/detail/:id",
     name: "detail",
     meta: { layout: "main" },
-    component: import("@/views/Detail.vue")
+    component: () => import("@/views/Detail.vue")
   },
   {
     path: "/history",
     name: "history",
     meta: { layout: "main" },
-    component: import("@/views/History.vue")
+    component: () => import("@/views/History.vue")
   },
   {
     path: "/planning",
     name: "planning",
     meta: { layout: "main" },
-    component: import("@/views/Planning.vue")
+    component: () => import("@/views/Planning.vue")
   }, {
     path: "/profile",
     name: "profile",
     meta: { layout: "main" },
-    component: import("@/views/Profile.vue")
+    component: () => import("@/views/Profile.vue")
   },
   {
     path: "/record",
     name: "record",
     meta: { layout: "main" },
-    component: import("@/views/Record.vue")
+    component: () => import("@/views/Record.vue")
   }
 ];
 

@@ -1,7 +1,7 @@
 <template>
   <div class="app-main-layout">
-    <Navbar @click="isOpen = !isOpen " />
-    <SideBar  :isOpen=isOpen />
+    <Navbar @toggleSidebar="toggleSidebar" />
+    <SideBar :isOpen=isOpen />
 
     <main class="app-content" :class="{full:!isOpen}">
       <div class="app-page">
@@ -10,9 +10,9 @@
     </main>
 
     <div class="fixed-action-btn">
-      <a class="btn-floating btn-large blue" href="#">
+      <router-link to="/record" class="btn-floating btn-large blue">
         <i class="large material-icons">add</i>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
@@ -25,6 +25,11 @@ export default {
   data: () => ({
     isOpen: true
   }),
+  methods: {
+    toggleSidebar() {
+      this.isOpen = !this.isOpen;
+    }
+  },
   components: {
     Navbar,
     SideBar
